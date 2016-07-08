@@ -1,0 +1,78 @@
+html, body{
+  width: 100%;
+  height: 100%;
+  
+  background-color: #222;
+}
+
+//stage
+.stage {
+  position: realtive;
+  width: 100%;
+  height: 720px;
+}
+
+/*--img style start--*/
+//整个图片框架样式
+.img-sec {
+  position: relative;
+  width: 100%;
+  height:100%;
+  overflow: hidden;
+  background-color: #ddd;
+
+  //使用at-root,使样式生成在根一级，不被包含
+  @at-root {
+    //每一个图片对象样式
+    .img-figure {
+      position: absolute;
+      width: 360px;
+      height: 230px;
+      margin: 0;
+      padding: 15px 19px;
+      background-color: #F8F5EC;
+      border-radius: 10px;
+      box-sizing: border-box;
+      cursor: pointer;
+      
+      transform-origin: 0 50% 0;
+      transform-style: preserve-3d;
+      transition: transform .6s ease-in-out, left .6s ease-in-out, top .6s ease-in-out;
+
+
+      img {
+        width: 320px;
+        height: 180px;
+        border-radius: 10px;
+      }
+    }
+
+    figcaption {
+      text-align: center;
+        color: #a7a0a2;
+      
+      .img-title {
+        margin:5px 0 0 0;
+        font-size: 16px;
+      }
+
+      .img-back {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        padding: 50px 40px;
+        overflow: auto;
+        font-size: 22px;
+        line-height: 1.25;
+        text-align: left;
+        box-sizing: border-box;
+        transform: rotateY(180deg) translateZ(1px);
+        backface-visibility: hidden;
+
+        p{ margin: 0}
+      }
+    }
+  }
+}
